@@ -8,8 +8,8 @@ build()
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 private void build(){
 	node {
-  	stage('Build') {
-        echo 'Building....'
-    }
+		stage('Build') {
+			echo 'Building....'
+		}
 	}
 }
