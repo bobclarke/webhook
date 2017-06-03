@@ -1,10 +1,8 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Setup
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-//import groovy.json.JsonSlurperClassic 
-//def slurper = new groovy.json.JsonSlurperClassic()
+import groovy.json.JsonSlurperClassic 
 
-println "\nENV: "+ env.getEnvironment() +" \n"
 println "\nPAYLOAD: "+ env.payload +"\n"
 
 
@@ -12,6 +10,7 @@ println "\nPAYLOAD: "+ env.payload +"\n"
 // main
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 build()
+def eventType = getEventType( payload )
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // subs
@@ -22,5 +21,9 @@ private void build(){
 			echo 'Building....'
 		}
 	}
+}
+
+private String getEventType ( payload ){
+	def slurper = new groovy.json.JsonSlurperClassic()
 }
 
