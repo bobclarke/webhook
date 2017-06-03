@@ -33,7 +33,7 @@ private String getEventType ( payload ){
 		def type = result.ref.split('/')[1]
 		println "\nTYPE :" + type
 		if( type.toLowerCase.contains('head'){
-			println "it's a push or a merge, same thing
+			println "it's a push or a merge, same thing"
 			return type
 		}
 	}
