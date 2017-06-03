@@ -32,7 +32,7 @@ private String getEventType ( payload ){
 		println "This is either a push, merge or a tag event, let's find out which"
 		def type = result.ref.split('/')[1]
 		println "\nTYPE :" + type
-		if( type.toLowerCase.contains('head')){
+		if( type.toLowerCase().contains('head')){
 			println "it's a push or a merge, same thing"
 			return type
 		}
