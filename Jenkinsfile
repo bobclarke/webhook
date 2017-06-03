@@ -11,7 +11,7 @@ println "\nPAYLOAD: "+ env.payload +"\n"
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 build()
 def eventType = getEventType( payload )
-println "\nEVENTTYPE" +eventType
+println "\nEVENTTYPE " +eventType
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // subs
@@ -28,7 +28,11 @@ private String getEventType ( payload ){
 	def slurper = new groovy.json.JsonSlurperClassic()
 	def result = slurper.parseText( payload )
 	def ref = result.ref
-	return ref
+
+	if( ref ){
+		println "This is either a push, merge or a tag event, let's find out which"
+		return ref
+	}
 }
 
 
