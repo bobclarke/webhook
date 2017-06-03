@@ -9,9 +9,13 @@ println "\nPAYLOAD: "+ env.payload +"\n"
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // main
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-build()
 def eventType = getEventType( payload )
-println "\nEVENTTYPE " +eventType
+switch (eventType) {
+	case "push": println "\nEVENTTYPE " +eventType; break;
+	case "pull": println "\nEVENTTYPE " +eventType; break;
+	case "tag": println "\nEVENTTYPE " +eventType; break;
+	default: println "Something else";
+
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // subs
@@ -34,8 +38,13 @@ private String getEventType ( payload ){
 	}
 
 	else if( result.ref && result.head_commit){
-		if( result.ref.split('/')[1].toLowerCase().contains('head')){
+
+		if( result.ref.split('/')[1].toLowerCase().contains('head') ){
 			return "push"
+		}
+
+		else if( result.ref.split('/')[1].toLowerCase().contains('tag') ){
+			return "tag"
 		}
 	}
 }
