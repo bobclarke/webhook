@@ -29,7 +29,7 @@ private String getEventType ( payload ){
 	def slurper = new groovy.json.JsonSlurperClassic()
 	def result = slurper.parseText( payload )
 
-	if( result.pull_request ){
+	if( result.pull_request  && result.action.toLowerCase().contains("opened") ){
 		return "pull"
 	}
 
