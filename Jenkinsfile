@@ -11,7 +11,7 @@ println "\nPAYLOAD: "+ env.payload +"\n"
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 build()
 def eventType = getEventType( payload )
-println "\nEVENTTYPE" "+eventType
+println "\nEVENTTYPE" +eventType
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // subs
