@@ -34,7 +34,7 @@ private String getEventType ( payload ){
 		println "\nTYPE :" + type
 		if( type.toLowerCase().contains('head')){
 			println "it's a push or a merge, same thing"
-			return type
+			return "push"
 		}
 	}
 }
