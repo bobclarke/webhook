@@ -1,4 +1,9 @@
-FROM: jenkins:latest
+FROM jenkins:latest
 
-RUN curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash - && \
-sudo apt-get install -y nodejs
+USER root
+
+RUN curl -sL https://deb.nodesource.com/setup_6.x | bash - && \
+apt-get update -y && \
+apt-get install apt-utils -y && \
+apt-get install nodejs -y
+
