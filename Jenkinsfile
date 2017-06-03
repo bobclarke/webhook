@@ -4,7 +4,7 @@
 //import groovy.json.JsonSlurperClassic 
 //def slurper = new groovy.json.JsonSlurperClassic()
 
-prinltn env
+println env
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // main
