@@ -1,0 +1,22 @@
+{
+  "name": "webhook",
+  "version": "1.0.0",
+  "description": "For testing git webhook payload parsing with the Jenkins workflow plugin __",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bobclarke/webhook.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bobclarke/webhook/issues"
+  },
+  "homepage": "https://github.com/bobclarke/webhook#readme",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}
