@@ -4,7 +4,8 @@
 //import groovy.json.JsonSlurperClassic 
 //def slurper = new groovy.json.JsonSlurperClassic()
 
-println "ENV: "+ env.getEnvironment()
+println "\nENV: "+ env.getEnvironment() +" \n"
+println "\nPAYLOAD: "+ env.payload +"\n"
 
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
