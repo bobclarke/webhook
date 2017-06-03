@@ -38,4 +38,3 @@ private String getEventType ( payload ){
 		}
 	}
 }
-
