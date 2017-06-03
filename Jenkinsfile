@@ -15,6 +15,7 @@ switch (eventType) {
 	case "pull": println "\nEVENTTYPE " +eventType; break;
 	case "tag": println "\nEVENTTYPE " +eventType; break;
 	default: println "Something else";
+}
 
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
