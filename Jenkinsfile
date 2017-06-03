@@ -28,7 +28,7 @@ private String getEventType ( payload ){
 	def slurper = new groovy.json.JsonSlurperClassic()
 	def result = slurper.parseText( payload )
 
-	if( result.ref ){
+	if( result.ref && head_commit){
 		println "This is either a push, merge or a tag event, let's find out which"
 		def type = result.ref.split('/')[1]
 		println "\nTYPE :" + type
