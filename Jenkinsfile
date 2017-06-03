@@ -11,6 +11,7 @@ println "\nPAYLOAD: "+ env.payload +"\n"
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 build()
 def eventType = getEventType( payload )
+println "\nEVENTTYPE" "+eventType
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // subs
@@ -25,5 +26,8 @@ private void build(){
 
 private String getEventType ( payload ){
 	def slurper = new groovy.json.JsonSlurperClassic()
+	def result = slurper.parseText( payload )
+	def ref = result.ref
+	return ref
 }
 
