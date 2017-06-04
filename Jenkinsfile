@@ -54,7 +54,6 @@ private void uploadArtifact(){
 			def slurper = new groovy.json.JsonSlurperClassic()
 			data = slurper.parseText( json );       
 			def tag = data.version
-			def props = readJSON file: 'package.json'
 			println "TAG: " +tag
 		}
 	}
