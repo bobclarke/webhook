@@ -35,6 +35,13 @@ private void build( eventType ){
 	}
 }
 
+private void uploadArtifact(){
+	node {
+		stage( uploadArtifact ) {
+		}
+	}
+}
+
 private String getEventType ( payload ){
 
 	def slurper = new groovy.json.JsonSlurperClassic()
