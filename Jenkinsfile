@@ -36,6 +36,14 @@ private void build( eventType ){
 	}
 }
 
+private void checkout(){
+	node {
+		stage( "Checkout" ) {
+			checkout scm
+		}
+	}
+}
+
 private void uploadArtifact(){
 	node {
 		stage( "uploadArtifact" ) {
