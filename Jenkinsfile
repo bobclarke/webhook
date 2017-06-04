@@ -47,14 +47,16 @@ private void checkout(){
 }
 
 private void uploadArtifact(){
-	env.WORKSPACE = pwd()
-	def file = readFile "${env.WORKSPACE}/package.json"
-	def slurper = new groovy.json.JsonSlurperClassic()
-	def reader = new BufferedReader(new InputStreamReader(new FileInputStream(file),"UTF-8"));
-	data = jsonSlurper.parse(reader);       
-	def tag = data.version
-	def props = readJSON file: 'package.json'
-	println "TAG: " +tag
+	node {
+		env.WORKSPACE = pwd()
+		def file = readFile "${env.WORKSPACE}/package.json"
+		def slurper = new groovy.json.JsonSlurperClassic()
+		def reader = new BufferedReader(new InputStreamReader(new FileInputStream(file),"UTF-8"));
+		data = jsonSlurper.parse(reader);       
+		def tag = data.version
+		def props = readJSON file: 'package.json'
+		println "TAG: " +tag
+	}
 }
 
 private String getEventType ( payload ){
