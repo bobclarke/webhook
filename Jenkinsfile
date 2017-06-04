@@ -12,7 +12,7 @@ println "\nPAYLOAD: "+ env.payload +"\n"
 
 def eventType = getEventType( payload )
 switch (eventType) {
-	case "push": build( eventType ); break;
+	case "push": build( eventType ); build( "Test" ); break;
 	case "pull": build( eventType ); break;
 	default: println "Something else";
 }
