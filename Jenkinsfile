@@ -49,10 +49,9 @@ private void checkout(){
 private void uploadArtifact(){
 	node {
 		env.WORKSPACE = pwd()
-		def file = readFile "${env.WORKSPACE}/package.json"
+		def json = readFile "${env.WORKSPACE}/package.json"
 		def slurper = new groovy.json.JsonSlurperClassic()
-		def reader = new BufferedReader(new InputStreamReader(new FileInputStream(file),"UTF-8"));
-		data = jsonSlurper.parse(reader);       
+		data = jsonSlurper.parse( json );       
 		def tag = data.version
 		def props = readJSON file: 'package.json'
 		println "TAG: " +tag
