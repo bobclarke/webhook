@@ -10,6 +10,8 @@ println "\nPAYLOAD: "+ env.payload +"\n"
 // main
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+checkout()
+
 def eventType = getEventType( payload )
 switch (eventType) {
 	case "push": 
