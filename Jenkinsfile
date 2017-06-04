@@ -48,13 +48,15 @@ private void checkout(){
 
 private void uploadArtifact(){
 	node {
-		env.WORKSPACE = pwd()
-		def json = readFile "${env.WORKSPACE}/package.json"
-		def slurper = new groovy.json.JsonSlurperClassic()
-		data = jsonSlurper.parse( json );       
-		def tag = data.version
-		def props = readJSON file: 'package.json'
-		println "TAG: " +tag
+		stage( "uploadArtifact" ){
+			env.WORKSPACE = pwd()
+			def json = readFile "${env.WORKSPACE}/package.json"
+			def slurper = new groovy.json.JsonSlurperClassic()
+			data = slurper.parse( json );       
+			def tag = data.version
+			def props = readJSON file: 'package.json'
+			println "TAG: " +tag
+		}
 	}
 }
 
