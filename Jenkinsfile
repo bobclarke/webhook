@@ -52,7 +52,7 @@ private void uploadArtifact(){
 			env.WORKSPACE = pwd()
 			def json = readFile "${env.WORKSPACE}/package.json"
 			def slurper = new groovy.json.JsonSlurperClassic()
-			data = slurper.parse( json );       
+			data = slurper.parseText( json );       
 			def tag = data.version
 			def props = readJSON file: 'package.json'
 			println "TAG: " +tag
