@@ -49,12 +49,11 @@ private void checkout(){
 private void uploadArtifact(){
 	node {
 		stage( "uploadArtifact" ) {
-			//def slurper = new groovy.json.JsonSlurperClassic()
-			//def reader = new BufferedReader(new InputStreamReader(new FileInputStream("package.json"),"UTF-8"));
-			//data = jsonSlurper.parse(reader);       
-			//def tag = data.version
-			//println "TAG: " +tag
-			sh "ls -al"
+			def slurper = new groovy.json.JsonSlurperClassic()
+			def reader = new BufferedReader(new InputStreamReader(new FileInputStream("package.json"),"UTF-8"));
+			data = jsonSlurper.parse(reader);       
+			def tag = data.version
+			println "TAG: " +tag
 		}
 	}
 }
