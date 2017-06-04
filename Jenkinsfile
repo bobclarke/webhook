@@ -38,7 +38,7 @@ private void build( eventType ){
 
 private void uploadArtifact(){
 	node {
-		stage( uploadArtifact ) {
+		stage( "uploadArtifact" ) {
 			def slurper = new groovy.json.JsonSlurperClassic()
 			def reader = new BufferedReader(new InputStreamReader(new FileInputStream("package.json"),"UTF-8"));
 			data = jsonSlurper.parse(reader);       
