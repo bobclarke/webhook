@@ -9,11 +9,11 @@ println "\nPAYLOAD: "+ env.payload +"\n"
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // main
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 def eventType = getEventType( payload )
 switch (eventType) {
-	case "push": println "\nEVENTTYPE " +eventType; break;
-	case "pull": println "\nEVENTTYPE " +eventType; break;
-	case "tag": println "\nEVENTTYPE " +eventType; break;
+	case "push": build( eventType ); break;
+	case "pull": build( eventType ); break;
 	default: println "Something else";
 }
 
@@ -21,9 +21,9 @@ switch (eventType) {
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // subs
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-private void build(){
+private void build( eventType ){
 	node {
-		stage('Build') {
+		stage( eventType ) {
 			echo 'Building....'
 		}
 	}
