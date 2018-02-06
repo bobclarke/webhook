@@ -1,4 +1,4 @@
 # webhook
 
-For testing git webhook payload parsing with the Jenkins workflow plugin
+For testing a github webhook payload parsing with the Jenkins workflow plugin
 
